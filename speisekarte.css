@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+:root {
+  --primary-color: #0085fa;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
+  --bg-color: rgb(25, 25, 25);
+  --accent-color: rgba(97, 94, 94, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-header {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("bilder/gyros.jpg") center/cover no-repeat;
+}
+
+.menu-title {
+  font-family: "Lobster", cursive;
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.menu-subtitle {
+  font-size: 18px;
+  color: var(--text-color-light);
+}
+
+.menu-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.menu-section {
+  margin-bottom: 60px;
+}
+
+.menu-heading {
+  font-size: 24px;
+  color: var(--primary-color);
+  padding-bottom: 5px;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 10px;
+}
+
+.menu-item h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.menu-item p {
+  font-size: 14px;
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.menu-footer {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--accent-color);
+}
+
+.back-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-title {
+    font-size: 32px;
+  }
+
+  .menu-heading {
+    font-size: 20px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price {
+    margin-top: 5px;
+  }
+}

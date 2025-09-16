@@ -1,16 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
+:root {
+  --primary-color: #0085fa;
+  --secondary-color: #ffffff;
+  --text-color: #ffffff;
+  --bg-color: rgb(25, 25, 25);
+  --accent-color: rgba(97, 94, 94, 0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: rgb(25, 25, 25);
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: "Inter", sans-serif;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navis {
@@ -22,10 +40,11 @@ body {
   padding: 15px;
   gap: 30px;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .nav {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.1rem;
@@ -35,7 +54,7 @@ body {
 }
 
 .nav:hover {
-  color: #0085fa;
+  color: var(--primary-color);
 }
 
 .hero {
@@ -65,18 +84,37 @@ body {
 }
 
 .herobutton {
-  background: #0085fa;
-  color: #ffffff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   padding: 12px 24px;
   text-decoration: none;
   font-weight: bold;
-  border: 2px solid #0085fa;
+  border: 2px solid var(--primary-color);
   transition: all 0.3s ease;
+  display: block;
+  margin-right: 50px;
 }
 
-.herobutton:hover {
+.herobutton {
   background: none;
-  color: #0085fa;
+  color: var(--primary-color);
+}
+
+.button {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: 50px;
+}
+
+.button:hover {
+  background: none;
+  color: var(--primary-color);
 }
 
 .glavnoto {
@@ -94,22 +132,22 @@ body {
 .glava {
   font-size: 22px;
   font-weight: bold;
-  margin-top: 50px;
+  margin-left: 50px;
   text-decoration: underline;
-  text-decoration-color: #0085fa;
+  text-decoration-color: var(--primary-color);
 }
 
 .kontent {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: center;
+  gap: 20px;
+  align-items: start;
 }
 
 .sliki {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .prvtext {
@@ -118,13 +156,17 @@ body {
   margin-right: 25px;
 }
 
+.glavnoto,
+.herobutton {
+  margin-left: 50px;
+}
+
 .prvaslika {
   grid-row: 1 / 3;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
-  margin-top: 20px;
 }
 
 .vtoraslika,
@@ -133,8 +175,6 @@ body {
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
-  margin-right: 70px;
-  margin-top: 30px;
 }
 
 .casovivlez {
@@ -166,7 +206,7 @@ body {
   font-weight: bold;
   margin-top: 50px;
   text-decoration: underline;
-  text-decoration-color: #0085fa;
+  text-decoration-color: var(--primary-color);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -186,6 +226,21 @@ body {
   gap: 30px;
   margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.jetzt {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.jetzt:hover {
+  background: none;
+  color: var(--primary-color);
 }
 
 .skara {
@@ -219,76 +274,123 @@ body {
 
 .vtoroto {
   background: none;
-  color: #0085fa;
+  color: var(--primary-color);
   padding: 12px 24px;
   text-decoration: none;
   font-weight: bold;
-  border: 2px solid #0085fa;
+  border: 2px solid var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .vtoroto:hover {
-  background: #0085fa;
-  color: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 footer {
-  background-color: rgba(97, 94, 94, 0.5);
+  background-color: var(--accent-color);
   background-repeat: no-repeat;
   background-position: center;
+  padding: 20px 0;
+  text-align: center;
   background-size: cover;
 }
 
 .linkovi {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.blagojce {
+  font-size: 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  margin-top: 150px;
 }
 
 .linkovi a {
-  margin-top: 40px;
-  margin-bottom: 200px;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
-}
-
-.footer-blagoj {
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
   .navis {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 15px;
+    padding-right: 50px;
+  }
+
+  .nav {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    height: auto;
+    padding-right: 30px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .opis {
+    font-size: 14px;
+    margin: 10px 20px;
+  }
+
+  .herobutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 40px;
+    margin-bottom: 30px;
   }
 
   .glavnoto {
-    margin-top: 50px;
-    display: block;
-  }
-  .glava {
-    font-size: 20px;
-  }
-  .kontent {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    margin: 40px 10px;
+    text-align: center;
     gap: 20px;
+  }
+
+  .glava {
+    margin-left: 120px;
+    margin-left: 0;
+  }
+
+  .prvtext {
+    margin-left: 0;
+    text-align: start;
+    font-size: 12px;
+    margin-right: 50px;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-bottom: 30px;
   }
 
   .sliki {
     grid-template-columns: 1fr 1fr;
     gap: 15px;
+    margin-left: 25px;
+    margin-right: 50px;
   }
 
   .prvaslika {
     width: 100%;
     height: 200px;
-    margin-top: 20px;
-    margin-left: 10px;
   }
 
   .vtoraslika,
@@ -296,40 +398,47 @@ footer {
     width: 100%;
     height: auto;
     max-height: 130px;
-    margin-right: 0;
-    margin-top: 10px;
   }
 
   .hero {
     padding-top: 150px;
     font-size: 14px;
   }
+
   .title {
     font-size: 40px;
   }
+
   .opis {
     font-size: 15px;
   }
+
   .herobutton {
     padding: 10px 20px;
     font-size: 14px;
   }
+
   .rasporedot {
     margin-top: 50px;
     margin-bottom: 30px;
+    padding-right: 20px;
   }
+
   .naslov,
   .podnaslov {
     font-size: 20px;
   }
+
   .posledno {
     flex-direction: column;
     gap: 20px;
   }
+
   .skara {
     width: 100%;
     height: auto;
   }
+
   .infos {
     margin-left: 0;
   }
@@ -339,13 +448,15 @@ footer {
     margin-top: 40px;
   }
 
+  .footer {
+    margin-right: 25px;
+  }
+
   .linkovi {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-  }
-  .linkovi a {
-    margin-bottom: 40px;
+    gap: 10px;
   }
 }
